@@ -164,8 +164,8 @@
                                                 class="btn btn-github">
                                                 <i class="fa-brands fa-github"></i> Source Code
                                           </a>
-                                          {% if repo.homepage and repo.homepage != "" %}
-                                          <a href="{{ repo.homepage }}" target="_blank"
+                                          {% if repo.demo_url %}
+                                          <a href="{{ repo.demo_url }}" target="_blank"
                                                 class="btn btn-demo">
                                                 <i
                                                       class="fa-solid fa-arrow-up-right-from-square"></i>

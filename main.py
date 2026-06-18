@@ -44,15 +44,28 @@ async def fetch_github_repos():
                 result = []
                 for repo in repos:
                     if not repo.get("fork", False):
+                        # Tự động phát hiện demo URL
+                        homepage = repo.get("homepage", "") or ""
+                        has_pages = repo.get("has_pages", False)
+                        repo_name = repo.get("name", "")
+
+                        # Ưu tiên homepage, nếu không có thì kiểm tra GitHub Pages
+                        demo_url = ""
+                        if homepage:
+                            demo_url = homepage
+                        elif has_pages:
+                            demo_url = f"https://{GITHUB_USERNAME}.github.io/{repo_name}/"
+
                         result.append({
-                            "name": repo.get("name", ""),
+                            "name": repo_name,
                             "full_name": repo.get("full_name", ""),
                             "description": repo.get("description", "") or "Không có mô tả",
                             "html_url": repo.get("html_url", "#"),
                             "language": repo.get("language", "") or "N/A",
                             "topics": repo.get("topics", []),
                             "updated_at": repo.get("updated_at", ""),
-                            "homepage": repo.get("homepage", ""),
+                            "homepage": homepage,
+                            "demo_url": demo_url,
                         })
                 result.sort(key=lambda x: x["updated_at"], reverse=True)
                 # Lưu vào cache
