@@ -571,7 +571,7 @@ main {
    ============================ */
 footer {
      background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%);
-     color: white;
+     color:
      padding: 30px 20px;
      margin-top: 60px;
 }
