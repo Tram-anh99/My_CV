@@ -4,7 +4,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>CV - Trang cá nhân</title>
-            <link rel="stylesheet" href="/static/style.css?v=blue2">
+            <link rel="stylesheet" href="/static/style.css">
             <link rel="stylesheet"
                   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
       </head>
@@ -131,50 +131,124 @@
                               nhân</h2>
 
                         <div class="projects-grid">
-                              {% for repo in repos_data %}
+                              <!-- Dự án 1 -->
                               <div class="project-card">
-                                    <div class="project-icon">
-                                          {% if repo.language == "Python" %}
-                                          <i class="fa-brands fa-python"></i>
-                                          {% elif repo.language == "JavaScript" or repo.language ==
-                                          "Vue" %}
-                                          <i class="fa-brands fa-js"></i>
-                                          {% elif repo.language == "HTML" %}
-                                          <i class="fa-brands fa-html5"></i>
-                                          {% elif repo.language == "CSS" %}
-                                          <i class="fa-brands fa-css3-alt"></i>
-                                          {% elif repo.language == "TypeScript" %}
-                                          <i class="fa-brands fa-js"></i>
-                                          {% else %}
-                                          <i class="fa-solid fa-code-branch"></i>
-                                          {% endif %}
-                                    </div>
-                                    <h3>{{ repo.name }}</h3>
-                                    <p>{{ repo.description }}</p>
+                                    <div class="project-icon"><i class="fa-solid fa-blog"></i></div>
+                                    <h3>Blog cá nhân với FastAPI</h3>
+                                    <p>Ứng dụng web blog xây dựng bằng FastAPI + SQLite, hỗ trợ CRUD
+                                          bài viết
+                                          với giao diện đẹp.</p>
                                     <div class="project-tech">
-                                          {% if repo.language != "N/A" %}
-                                          <span>{{ repo.language }}</span>
-                                          {% endif %}
-                                          {% for topic in repo.topics[:4] %}
-                                          <span>{{ topic }}</span>
-                                          {% endfor %}
+                                          <span>Python</span><span>FastAPI</span><span>SQLite</span><span>Jinja2</span>
                                     </div>
                                     <div class="project-links">
-                                          <a href="{{ repo.html_url }}" target="_blank"
-                                                class="btn btn-github">
+                                          <a href="https://github.com/Tram-anh99/My_CV"
+                                                target="_blank" class="btn btn-github">
                                                 <i class="fa-brands fa-github"></i> Source Code
                                           </a>
-                                          {% if repo.homepage and repo.homepage != "" %}
-                                          <a href="{{ repo.homepage }}" target="_blank"
-                                                class="btn btn-demo">
+                                          <a href="#" class="btn btn-demo">
                                                 <i
                                                       class="fa-solid fa-arrow-up-right-from-square"></i>
                                                 Demo
                                           </a>
-                                          {% endif %}
                                     </div>
                               </div>
-                              {% endfor %}
+
+                              <!-- Dự án 2 -->
+                              <div class="project-card">
+                                    <div class="project-icon"><i
+                                                class="fa-solid fa-robot"></i></div>
+                                    <h3>Chatbot AI Assistant</h3>
+                                    <p>Chatbot thông minh sử dụng API AI để trả lời câu hỏi và hỗ
+                                          trợ người
+                                          dùng tự động.</p>
+                                    <div class="project-tech">
+                                          <span>Python</span><span>OpenAI
+                                                API</span><span>Flask</span>
+                                    </div>
+                                    <div class="project-links">
+                                          <a href="#" class="btn btn-github">
+                                                <i class="fa-brands fa-github"></i> Source Code
+                                          </a>
+                                          <a href="#" class="btn btn-demo">
+                                                <i
+                                                      class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                Demo
+                                          </a>
+                                    </div>
+                              </div>
+
+                              <!-- Dự án 3 -->
+                              <div class="project-card">
+                                    <div class="project-icon"><i
+                                                class="fa-solid fa-gamepad"></i></div>
+                                    <h3>Trò chơi đoán số</h3>
+                                    <p>Game mini đơn giản với Python, người chơi phải đoán đúng số
+                                          ngẫu nhiên
+                                          trong khoảng cho trước.</p>
+                                    <div class="project-tech">
+                                          <span>Python</span><span>HTML/CSS</span><span>JavaScript</span>
+                                    </div>
+                                    <div class="project-links">
+                                          <a href="#" class="btn btn-github">
+                                                <i class="fa-brands fa-github"></i> Source Code
+                                          </a>
+                                          <a href="#" class="btn btn-demo">
+                                                <i
+                                                      class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                Demo
+                                          </a>
+                                    </div>
+                              </div>
+
+                              <!-- Dự án 4 - Placeholder -->
+                              <div class="project-card project-card-add">
+                                    <div class="project-icon"><i class="fa-solid fa-plus"></i></div>
+                                    <h3>Thêm dự án mới</h3>
+                                    <p>Dự án tiếp theo sẽ sớm được cập nhật...</p>
+                                    <div class="project-links">
+                                          <a href="#" class="btn btn-github"
+                                                style="opacity:0.5; pointer-events:none;">
+                                                <i class="fa-brands fa-github"></i> Coming Soon
+                                          </a>
+                                    </div>
+                              </div>
+                              <!-- Dự án 4 - Placeholder -->
+                              <div class="project-card project-card-add">
+                                    <div class="project-icon"><i class="fa-solid fa-plus"></i></div>
+                                    <h3>Thêm dự án mới</h3>
+                                    <p>Dự án tiếp theo sẽ sớm được cập nhật...</p>
+                                    <div class="project-links">
+                                          <a href="#" class="btn btn-github"
+                                                style="opacity:0.5; pointer-events:none;">
+                                                <i class="fa-brands fa-github"></i> Coming Soon
+                                          </a>
+                                    </div>
+                              </div>
+                              <!-- Dự án 4 - Placeholder -->
+                              <div class="project-card project-card-add">
+                                    <div class="project-icon"><i class="fa-solid fa-plus"></i></div>
+                                    <h3>Thêm dự án mới</h3>
+                                    <p>Dự án tiếp theo sẽ sớm được cập nhật...</p>
+                                    <div class="project-links">
+                                          <a href="#" class="btn btn-github"
+                                                style="opacity:0.5; pointer-events:none;">
+                                                <i class="fa-brands fa-github"></i> Coming Soon
+                                          </a>
+                                    </div>
+                              </div>
+                              <!-- Dự án 4 - Placeholder -->
+                              <div class="project-card project-card-add">
+                                    <div class="project-icon"><i class="fa-solid fa-plus"></i></div>
+                                    <h3>Thêm dự án mới</h3>
+                                    <p>Dự án tiếp theo sẽ sớm được cập nhật...</p>
+                                    <div class="project-links">
+                                          <a href="#" class="btn btn-github"
+                                                style="opacity:0.5; pointer-events:none;">
+                                                <i class="fa-brands fa-github"></i> Coming Soon
+                                          </a>
+                                    </div>
+                              </div>
                         </div>
                   </section>
 

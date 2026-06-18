@@ -19,19 +19,10 @@ templates = Jinja2Templates(directory="templates")
 # GitHub username
 GITHUB_USERNAME = "Tram-anh99"
 
-# Cache cho GitHub API (giảm số lần gọi API)
-_repos_cache = {"data": None, "timestamp": 0}
-CACHE_TTL = 300  # Cache 5 phút
 
-
-# Hàm lấy danh sách repo từ GitHub API (có cache)
+# Hàm lấy danh sách repo từ GitHub API
 async def fetch_github_repos():
-    """Lấy danh sách repo từ GitHub API, chỉ lấy repo không phải fork. Cache 5 phút."""
-    now = time.time()
-    # Nếu cache còn hạn thì trả về luôn
-    if _repos_cache["data"] is not None and (now - _repos_cache["timestamp"]) < CACHE_TTL:
-        return _repos_cache["data"]
-
+    """Lấy danh sách repo từ GitHub API, chỉ lấy repo không phải fork."""
     url = f"https://api.github.com/users/{GITHUB_USERNAME}/repos?per_page=100&sort=updated"
     try:
         async with httpx.AsyncClient(timeout=10) as client:
@@ -55,14 +46,10 @@ async def fetch_github_repos():
                             "homepage": repo.get("homepage", ""),
                         })
                 result.sort(key=lambda x: x["updated_at"], reverse=True)
-                # Lưu vào cache
-                _repos_cache["data"] = result
-                _repos_cache["timestamp"] = now
                 return result
     except Exception as e:
         print(f"Lỗi khi lấy repos từ GitHub: {e}")
-    # Nếu lỗi mà có cache cũ thì dùng cache cũ
-    return _repos_cache["data"] or []
+    return []
 
 
 # Hàm tạo cơ sở dữ liệu (Database)

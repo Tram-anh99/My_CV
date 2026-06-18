@@ -4,7 +4,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>CV - Trang cá nhân</title>
-            <link rel="stylesheet" href="/static/style.css?v=blue2">
+            <link rel="stylesheet" href="/static/style.css">
             <link rel="stylesheet"
                   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
       </head>
@@ -136,8 +136,7 @@
                                     <div class="project-icon">
                                           {% if repo.language == "Python" %}
                                           <i class="fa-brands fa-python"></i>
-                                          {% elif repo.language == "JavaScript" or repo.language ==
-                                          "Vue" %}
+                                          {% elif repo.language == "JavaScript" or repo.language == "Vue" %}
                                           <i class="fa-brands fa-js"></i>
                                           {% elif repo.language == "HTML" %}
                                           <i class="fa-brands fa-html5"></i>
@@ -160,16 +159,12 @@
                                           {% endfor %}
                                     </div>
                                     <div class="project-links">
-                                          <a href="{{ repo.html_url }}" target="_blank"
-                                                class="btn btn-github">
+                                          <a href="{{ repo.html_url }}" target="_blank" class="btn btn-github">
                                                 <i class="fa-brands fa-github"></i> Source Code
                                           </a>
                                           {% if repo.homepage and repo.homepage != "" %}
-                                          <a href="{{ repo.homepage }}" target="_blank"
-                                                class="btn btn-demo">
-                                                <i
-                                                      class="fa-solid fa-arrow-up-right-from-square"></i>
-                                                Demo
+                                          <a href="{{ repo.homepage }}" target="_blank" class="btn btn-demo">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
                                           </a>
                                           {% endif %}
                                     </div>

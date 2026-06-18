@@ -4,7 +4,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>CV - Trang cá nhân</title>
-            <link rel="stylesheet" href="/static/style.css?v=blue2">
+            <link rel="stylesheet" href="style.css">
             <link rel="stylesheet"
                   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
       </head>
@@ -45,8 +45,7 @@
                               <a href="mailto:tramanh84265@gmail.com" title="Email">
                                     <i class="fa-solid fa-envelope"></i>
                               </a>
-                              <a href="https://www.linkedin.com/in/tramanh879/" target="_blank"
-                                    title="LinkedIn">
+                              <a href="https://www.linkedin.com/in/tramanh879/" target="_blank" title="LinkedIn">
                                     <i class="fa-brands fa-linkedin"></i>
                               </a>
                         </div>
@@ -68,11 +67,7 @@
                                           <i class="fa-solid fa-hand-sparkles"></i>
                                           <h3>Giới thiệu</h3>
                                     </div>
-                                    <p>Xin chào! Tôi là Lê Ngọc Trâm Anh, một kỹ sư dữ liệu và nhà
-                                          phân tích dữ liệu nhiệt huyết. Tôi có kinh nghiệm trong
-                                          việc xây dựng và quản lý các hệ thống dữ liệu, tối ưu hóa
-                                          quy trình phân tích và trích xuất thông tin giá trị từ dữ
-                                          liệu để đưa ra các quyết định kinh doanh.</p>
+                                    <p>Xin chào! Tôi là Lê Ngọc Trâm Anh, một kỹ sư dữ liệu và nhà phân tích dữ liệu nhiệt huyết. Tôi có kinh nghiệm trong việc xây dựng và quản lý các hệ thống dữ liệu, tối ưu hóa quy trình phân tích và trích xuất thông tin giá trị từ dữ liệu để đưa ra các quyết định kinh doanh.</p>
                               </div>
 
                               <!-- Kỹ năng -->
@@ -99,9 +94,15 @@
                                     </div>
                                     <div class="timeline">
                                           <div class="timeline-item">
-                                                <span class="timeline-date">Tốt nghiệp 2022</span>
-                                                <h4>Đại học Tài nguyên và Môi trường TP.HCM</h4>
-                                                <p>Chuyên ngành: Hệ thống Thông tin</p>
+                                                <span class="timeline-date">2023 - Nay</span>
+                                                <h4>Đại học</h4>
+                                                <p>Chuyên ngành: [Tên ngành]<br>Trường: [Tên
+                                                      trường]</p>
+                                          </div>
+                                          <div class="timeline-item">
+                                                <span class="timeline-date">2020 - 2023</span>
+                                                <h4>Trung học Phổ thông</h4>
+                                                <p>Trường: [Tên trường]</p>
                                           </div>
                                     </div>
                               </div>
@@ -131,50 +132,88 @@
                               nhân</h2>
 
                         <div class="projects-grid">
-                              {% for repo in repos_data %}
+                              <!-- Dự án 1 -->
                               <div class="project-card">
-                                    <div class="project-icon">
-                                          {% if repo.language == "Python" %}
-                                          <i class="fa-brands fa-python"></i>
-                                          {% elif repo.language == "JavaScript" or repo.language ==
-                                          "Vue" %}
-                                          <i class="fa-brands fa-js"></i>
-                                          {% elif repo.language == "HTML" %}
-                                          <i class="fa-brands fa-html5"></i>
-                                          {% elif repo.language == "CSS" %}
-                                          <i class="fa-brands fa-css3-alt"></i>
-                                          {% elif repo.language == "TypeScript" %}
-                                          <i class="fa-brands fa-js"></i>
-                                          {% else %}
-                                          <i class="fa-solid fa-code-branch"></i>
-                                          {% endif %}
-                                    </div>
-                                    <h3>{{ repo.name }}</h3>
-                                    <p>{{ repo.description }}</p>
+                                    <div class="project-icon"><i class="fa-solid fa-blog"></i></div>
+                                    <h3>Blog cá nhân với FastAPI</h3>
+                                    <p>Ứng dụng web blog xây dựng bằng FastAPI + SQLite, hỗ trợ CRUD
+                                          bài viết
+                                          với giao diện đẹp.</p>
                                     <div class="project-tech">
-                                          {% if repo.language != "N/A" %}
-                                          <span>{{ repo.language }}</span>
-                                          {% endif %}
-                                          {% for topic in repo.topics[:4] %}
-                                          <span>{{ topic }}</span>
-                                          {% endfor %}
+                                          <span>Python</span><span>FastAPI</span><span>SQLite</span><span>Jinja2</span>
                                     </div>
                                     <div class="project-links">
-                                          <a href="{{ repo.html_url }}" target="_blank"
-                                                class="btn btn-github">
+                                          <a href="https://github.com/Tram-anh99/My_CV"
+                                                target="_blank" class="btn btn-github">
                                                 <i class="fa-brands fa-github"></i> Source Code
                                           </a>
-                                          {% if repo.homepage and repo.homepage != "" %}
-                                          <a href="{{ repo.homepage }}" target="_blank"
-                                                class="btn btn-demo">
+                                          <a href="#" class="btn btn-demo">
                                                 <i
                                                       class="fa-solid fa-arrow-up-right-from-square"></i>
                                                 Demo
                                           </a>
-                                          {% endif %}
                                     </div>
                               </div>
-                              {% endfor %}
+
+                              <!-- Dự án 2 -->
+                              <div class="project-card">
+                                    <div class="project-icon"><i
+                                                class="fa-solid fa-robot"></i></div>
+                                    <h3>Chatbot AI Assistant</h3>
+                                    <p>Chatbot thông minh sử dụng API AI để trả lời câu hỏi và hỗ
+                                          trợ người
+                                          dùng tự động.</p>
+                                    <div class="project-tech">
+                                          <span>Python</span><span>OpenAI
+                                                API</span><span>Flask</span>
+                                    </div>
+                                    <div class="project-links">
+                                          <a href="#" class="btn btn-github">
+                                                <i class="fa-brands fa-github"></i> Source Code
+                                          </a>
+                                          <a href="#" class="btn btn-demo">
+                                                <i
+                                                      class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                Demo
+                                          </a>
+                                    </div>
+                              </div>
+
+                              <!-- Dự án 3 -->
+                              <div class="project-card">
+                                    <div class="project-icon"><i
+                                                class="fa-solid fa-gamepad"></i></div>
+                                    <h3>Trò chơi đoán số</h3>
+                                    <p>Game mini đơn giản với Python, người chơi phải đoán đúng số
+                                          ngẫu nhiên
+                                          trong khoảng cho trước.</p>
+                                    <div class="project-tech">
+                                          <span>Python</span><span>HTML/CSS</span><span>JavaScript</span>
+                                    </div>
+                                    <div class="project-links">
+                                          <a href="#" class="btn btn-github">
+                                                <i class="fa-brands fa-github"></i> Source Code
+                                          </a>
+                                          <a href="#" class="btn btn-demo">
+                                                <i
+                                                      class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                Demo
+                                          </a>
+                                    </div>
+                              </div>
+
+                              <!-- Dự án 4 - Placeholder -->
+                              <div class="project-card project-card-add">
+                                    <div class="project-icon"><i class="fa-solid fa-plus"></i></div>
+                                    <h3>Thêm dự án mới</h3>
+                                    <p>Dự án tiếp theo sẽ sớm được cập nhật...</p>
+                                    <div class="project-links">
+                                          <a href="#" class="btn btn-github"
+                                                style="opacity:0.5; pointer-events:none;">
+                                                <i class="fa-brands fa-github"></i> Coming Soon
+                                          </a>
+                                    </div>
+                              </div>
                         </div>
                   </section>
 
@@ -197,14 +236,12 @@
             <!-- ===== FOOTER ===== -->
             <footer>
                   <div class="footer-content">
-                        <p>&copy; 2026 <strong>Lê Ngọc Trâm Anh</strong>. All rights reserved.</p>
+                        <p>&copy; 2026 <strong>Trần Phạm Trâm Anh</strong>. All rights reserved.</p>
                         <div class="footer-links">
                               <a href="https://github.com/Tram-anh99" target="_blank"><i
                                           class="fa-brands fa-github"></i></a>
-                              <a href="https://www.linkedin.com/in/tramanh879/" target="_blank"><i
-                                          class="fa-brands fa-linkedin"></i></a>
-                              <a href="mailto:tramanh84265@gmail.com"><i
-                                          class="fa-solid fa-envelope"></i></a>
+                              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                              <a href="#"><i class="fa-solid fa-envelope"></i></a>
                         </div>
                   </div>
             </footer>
